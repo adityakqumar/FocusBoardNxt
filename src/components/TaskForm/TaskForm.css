@@ -1,0 +1,183 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.task-form {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.2s ease;
+}
+
+.task-form__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 0;
+}
+
+.task-form__heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.task-form__close {
+  color: var(--gray-400);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.task-form__close:hover {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.task-form__body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.task-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-form__label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.task-form__required {
+  color: var(--high);
+}
+
+.task-form__input,
+.task-form__textarea,
+.task-form__select {
+  padding: 10px 12px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--gray-800);
+  background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.task-form__input:focus,
+.task-form__textarea:focus,
+.task-form__select:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.task-form__input::placeholder,
+.task-form__textarea::placeholder {
+  color: var(--gray-400);
+}
+
+.task-form__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.task-form__select {
+  cursor: pointer;
+}
+
+.task-form__field--error .task-form__input {
+  border-color: var(--high);
+}
+
+.task-form__field--error .task-form__input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.task-form__error {
+  font-size: 0.75rem;
+  color: var(--high);
+  font-weight: 500;
+}
+
+.task-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 24px 24px;
+}
+
+.task-form__btn {
+  padding: 10px 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+}
+
+.task-form__btn--cancel {
+  background: var(--white);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+}
+
+.task-form__btn--cancel:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-300);
+}
+
+.task-form__btn--submit {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.task-form__btn--submit:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 480px) {
+  .task-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .task-form__actions {
+    flex-direction: column;
+  }
+
+  .task-form__btn {
+    width: 100%;
+    text-align: center;
+  }
+}

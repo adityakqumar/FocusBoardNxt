@@ -1,0 +1,70 @@
+.delete-modal {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.2s ease;
+}
+
+.delete-modal__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--high-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.delete-modal__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+}
+
+.delete-modal__text {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.delete-modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.delete-modal__btn {
+  padding: 10px 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+  min-width: 100px;
+}
+
+.delete-modal__btn--cancel {
+  background: var(--white);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+}
+
+.delete-modal__btn--cancel:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-300);
+}
+
+.delete-modal__btn--delete {
+  background: var(--high);
+  color: var(--white);
+}
+
+.delete-modal__btn--delete:hover {
+  background: #dc2626;
+}
